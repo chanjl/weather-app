@@ -1,0 +1,16 @@
+<form #cityForm="ngForm" (ngSubmit)="processForm()">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <mat-form-field>
+      <input required matInput #nameField="ngModel" name="name" placeholder="City name" ngModel>
+      <mat-hint *ngIf="!nameField.pristine && nameField.invalid">
+        Please enter a city name
+      </mat-hint>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" class="addBtn" [disabled]="!cityForm.valid">Add</button>
+  </div>
+</form>
+<mat-list>
+  <mat-list-item *ngFor="let c of cityList" (click)="selectCity(c)">
+    {{c}}
+  </mat-list-item>
+</mat-list>

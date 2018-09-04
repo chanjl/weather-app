@@ -1,0 +1,21 @@
+<form #weatherForm="ngForm" (ngSubmit)="back()">
+  <div fxLayout="row" fxLayoutAlign="space-between">
+    <span>{{result.name}}</span>
+    <button mat-raised-button color="accent" type="submit">Back</button>
+  </div>
+  <div margin="10px">
+    <mat-card fxLayout="row" fxLayoutGap="10px">
+      <div>
+        <img mat-card-image class="weatherImg" src="https://s3.amazonaws.com/tinycards/image/a288321180dc74ab18c7a693c88ec34d" alt="Photo of a Sky">
+      </div>
+      <div>
+        <mat-card-title>
+          Temperature : {{result.temp}} C
+        </mat-card-title>
+        <mat-card-subtitle>
+          <span>description : {{result.desc}}</span>
+        </mat-card-subtitle>
+      </div>
+    </mat-card>
+  </div>
+</form>
