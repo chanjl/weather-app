@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class ListDisplayComponent implements OnInit {
   result = {
     name: "",
-    temp: 0,
+    temp: "0",
     desc: ""
   };
 
@@ -26,6 +26,9 @@ export class ListDisplayComponent implements OnInit {
   cityName:string;
 
   ngOnInit() {
+    //this.openWeatherSvc.sharedData = "changed";
+    //console.log(this.openWeatherSvc.sharedData);
+
     this.cityName = this.activatedRoute.snapshot.params.cityName;
     console.log(this.cityName);
     this.result.name = this.cityName;

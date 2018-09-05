@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment';
 })
 export class OpenweatherService {
 
+  //using service to store global data
+  // sharedData: string = "hello world";
   constructor(private http: HttpClient) {}
 
   getWeather(city): Observable<any>{

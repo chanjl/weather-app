@@ -8,9 +8,13 @@
     </mat-form-field>
     <button mat-raised-button color="accent" type="submit" class="addBtn" [disabled]="!cityForm.valid">Add</button>
   </div>
+  <mat-selection-list #cities>
+    <mat-list-option *ngFor="let c of cityList" (click)="selectCity(c)">
+      {{c}}
+    </mat-list-option>
+  </mat-selection-list>
+  <div fxLayout="column row" fxLayoutAlign="end end" fxLayoutGap="2vw">
+    <button mat-raised-button color="accent" (click)="view(cities.selectedOptions)">View</button>
+    <button mat-raised-button color="accent">Delete</button>
+  </div>
 </form>
-<mat-list>
-  <mat-list-item *ngFor="let c of cityList" (click)="selectCity(c)">
-    {{c}}
-  </mat-list-item>
-</mat-list>

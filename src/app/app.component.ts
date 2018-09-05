@@ -11,11 +11,4 @@ export class AppComponent {
   title = 'weather-app';
 
   constructor(private openWeatherSvc: OpenweatherService, private route: Router) { }
-
-  ngOnInit() {
-    this.openWeatherSvc.getWeather('Singapore')
-      .subscribe((data: any) => {
-        console.log(data);
-      });
-  }     
 }
